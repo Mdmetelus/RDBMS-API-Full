@@ -2,7 +2,7 @@
 exports.up = function(knex, Promise) {
     //makes changes to our database
     return knex.schema.createTable('cohorts', function(tbl){
-        //primary key (will always be id) empty = id; 'items_id' = sspecifically named
+        //primary key (will always be id) empty = id; 'items_id' = specifically named
         tbl.increments();
 
         tbl.string('name', 128);
