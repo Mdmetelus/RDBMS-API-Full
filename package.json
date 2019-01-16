@@ -16,5 +16,14 @@
   "bugs": {
     "url": "https://github.com/Mdmetelus/RDBMS-API-Full/issues"
   },
-  "homepage": "https://github.com/Mdmetelus/RDBMS-API-Full#readme"
+  "homepage": "https://github.com/Mdmetelus/RDBMS-API-Full#readme",
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "helmet": "^3.15.0",
+    "knex": "^0.16.3",
+    "sqlite3": "^4.0.6"
+  }
 }
