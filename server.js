@@ -1,12 +1,12 @@
 const express = require('express');
 const helmet = require('helmet');
 const server = express();
-const bearRoutes = require('./allRoutes/bearRoutes');
+const chRoutes = require('./allRoutes/chRoutes');
 
 server.use(express.json());
 server.use(helmet());
 
-// server.use('/api/cohorts', chRoutes);
+server.use('/api/cohorts', chRoutes);
 // server.use('/api/students', stRoutes);
 
 
