@@ -4,14 +4,14 @@ exports.up = function(knex, Promise) {
     return knex.schema.createTable('', function(tbl) {
         //primary key (will always be id) empty = id; 'items_id' = specifically named
 
-        tbl.increments(); // defaultss to  a column named id
+        tbl.increments(); // defaultss to  a column named id//
 
         tbl.string('name', 255);
 
-        //timestamp
+        //timestamp:
         tbl.timestamp(true,true);
 
-        // foreign  key example
+        // foreign  key implimentation:
         tbl.integer('cohort_id').unsigned().references('id').inTable('cohorts');
 
         ///constraints
