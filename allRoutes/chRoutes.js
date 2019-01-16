@@ -42,3 +42,7 @@ router.post('/', (req, res) => {
             res.status(500).json({error: "There was an error while saving your cohort info", err});
         });
 });
+
+
+
+module.exports = router;
