@@ -65,6 +65,52 @@ router.post('/', (req, res) => {
 
 
 
+//++++++++++++++++++++++++++++++++++++++++
+// - Delete Endpoint.   -
+//++++++++++++++++++++++++++++++++++++++++
+// Calling .del() without first filtering the records will result on the removal of all the records in the table, be careful!
+
+router.delete('/:id', (req, res) => {
+    const { id } = req.params;
+
+    db('students')
+        .where({ id })
+        .del()
+        .then(count => {
+            if (count == 0) {
+                res.status(404).json({ error: 'Error, nothing was deleted. Please try again.', err});
+            } else {
+                res.status(200).json(count);
+            }
+        })
+        .catch(err => {
+            res.status(500).json({error: 'There was an error deleting the student. Please Try again.', err }) 
+        });
+});
+
+
+
+//++++++++++++++++++++++++++++++++++++++++
+// - Update  Endpoint.   -
+//++++++++++++++++++++++++++++++++++++++++
+
+router.put('/:id', (req, res) => {
+    const changes= req.body;
+    const { id } = req.params;
+    db('students')
+        .where('id', '=', id)
+        .update(changes)
+        .then(count => {
+            // count === number of records updated
+            if (count == 0) {
+                res.status(404).json({error: 'No items updated, student not found', err});
+            }
+            res.status(200).json(count);
+        }).catch( err => {
+            res.status(500).json({error: 'error', err});
+        });
+});
+
 
 
 

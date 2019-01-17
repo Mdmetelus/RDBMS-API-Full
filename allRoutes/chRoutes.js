@@ -41,35 +41,6 @@ router.get('/:id', (req, res) => {
 });
 
 
-
-
-// //  /:id/students
-// //  Get Single Projects Actions
-// router.get("//:id/students", (req, res) => {
-//     const { id } = req.params;
-//     db('cohorts').where("project_id", id )
-//     //       .then(students => students.map(action => mappers.actionToBody(action)));
-//     //   },
-//       .getProjectActions(id)
-//       .then(project => {
-//         if (project.length) {
-//           res.status(200).json(project);
-//         } else {
-//           res.status(404).json({
-//             message:
-//               "a project with that id doesnt exist or does not have any actions with it"
-//           });
-//         }
-//       })
-//       .catch(err =>
-//         res.status(500).json({ error: "the project info could not be retrieved" })
-//       );
-//   });
-
-
-
-
-
 //++++++++++++++++++++++++++++++++++++++++
 // - Post Endpoint.     -
 //++++++++++++++++++++++++++++++++++++++++
