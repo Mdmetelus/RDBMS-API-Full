@@ -17,7 +17,7 @@ exports.up = function(knex, Promise) {
         ///constraints
         // tbl.unique('name','uq_items_name'); // makes name unique
 
-    })
+    });
   
 };
 
