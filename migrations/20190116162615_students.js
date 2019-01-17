@@ -1,7 +1,7 @@
 
 exports.up = function(knex, Promise) {
     //makes changes to our database
-    return knex.schema.createTable('', function(tbl) {
+    return knex.schema.createTable('students', function(tbl) {
         //primary key (will always be id) empty = id; 'items_id' = specifically named
 
         tbl.increments(); // defaultss to  a column named id//
@@ -25,6 +25,6 @@ exports.down = function(knex, Promise) {
     // rollback/undo the changes/ undo the created database from above
     // return knew.schema.dropUnique('name' , 'uq_items_name' );
 
-    knex.schema.dropTableIfExists('items');
+    knex.schema.dropTableIfExists('students');
   
 };
